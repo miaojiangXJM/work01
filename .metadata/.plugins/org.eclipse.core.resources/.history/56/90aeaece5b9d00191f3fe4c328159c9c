@@ -1,0 +1,49 @@
+package com.tgb.web.controller;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
+import org.springframework.http.HttpRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.tgb.web.controller.entity.User;
+import com.tgb.web.controller.service.IUserManager;
+
+
+@Controller
+@RequestMapping(value="/tUser")
+public class TUserController {
+
+	@Resource(name="userManager")
+	private IUserManager userManager;
+	
+	@RequestMapping("/toAddUser")
+	public String toAddUser(User user){
+		return "/welcome";
+	}
+	//注册
+	@RequestMapping("/addUser")
+	public String addUser(HttpServletRequest request,User user){
+		userManager.addUser(request,user);
+		return "/firstPage/FirstPage";
+	}
+	//登录
+	@RequestMapping("/loginUser")
+	public @ResponseBody List<User> loginUser(HttpServletRequest request,User user,HttpSession session){
+		List<User> list = null;
+		list = userManager.loginUser(request,user);
+		String rememberLoginInfo = request.getParameter("rememberLoginInfo");
+		if(list!=null && !list.isEmpty()){
+			session.setAttribute("user",list);
+		}
+		
+		return list;
+	}
+	
+}

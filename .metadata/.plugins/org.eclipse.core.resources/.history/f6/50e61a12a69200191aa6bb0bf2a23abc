@@ -1,0 +1,42 @@
+ <%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function login(){
+		var userLoginName = $('#userLoginName').val();
+		var userLoginPsassword = $('#userLoginPsassword').val();
+		var form = document.forms[0];
+		alert(userLoginName);
+		form.action = "/theTest2/tUser/addUser";
+		form.method = "post";
+		alert(1);
+		form.submit();
+	}
+</script>
+<body>
+	<form action="userFrom">
+		<div>
+			<table>
+				<tr>
+					<td>账号：</td>
+					<td><input type="text" name="userLoginName" id="userLoginName"/></td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td><input type="text" name="userLoginPsassword" id="userLoginPsassword"/></td>
+				</tr>
+				<tr>
+					<td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="login()">确认</a></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

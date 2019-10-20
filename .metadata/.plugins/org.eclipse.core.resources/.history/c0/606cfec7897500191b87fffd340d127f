@@ -1,0 +1,12 @@
+package com.quality.controller;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+public class M1hwController extends MultiActionController{
+	public ModelAndView add() {
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.tgb.web.controller;
+
+import javax.annotation.Resource;
+
+import org.springframework.http.HttpRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.tgb.web.controller.entity.User;
+import com.tgb.web.controller.service.IUserManager;
+
+
+@Controller
+@RequestMapping(value="/tUser")
+public class UserController {
+
+	@Resource(name="userManager")
+	private IUserManager userManager;
+	
+	@RequestMapping("/toAddUser")
+	public String toAddUser(User user){
+		return "/welcome";
+	}
+	
+	@RequestMapping("/addUser")
+	public String addUser(User user){
+		System.out.println("jinlaile");
+		userManager.addUser(user);
+		System.out.println("1");
+		return "/FirstPage";
+		return "/welcome";
+		
+	}
+	
+	@RequestMapping("/add")
+	public String add(User user){
+		return "/welcome";
+	}
+}

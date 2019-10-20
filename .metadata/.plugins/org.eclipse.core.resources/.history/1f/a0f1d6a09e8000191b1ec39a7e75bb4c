@@ -1,0 +1,25 @@
+package com.quality.service;
+
+import org.springframework.stereotype.Service;
+
+import com.quality.dao.ITUserDao;
+import com.quality.po.TUser;
+@Service("tUserService")
+public class TUserService implements ITUserService{
+
+	private ITUserDao tUserDao;
+	
+	public void setTuserDao(ITUserDao tUserDao) {
+		this.tUserDao=tUserDao;
+	}
+	
+	public ITUserDao gettuserDao(){
+		return tUserDao;
+		}
+	
+	@Override
+	public void addTUser(TUser tUser) {
+		tUserDao.addUser(tUser);
+	}
+
+}

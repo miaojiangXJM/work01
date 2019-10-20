@@ -1,0 +1,30 @@
+package com.quality.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+class Testssh {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testDataSourcr() throws SQLException {
+		ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:/*.xml");
+		//ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+		System.out.println(ac);
+		System.out.println(123);	
+		DataSource dataSource = (DataSource) ac.getBean("dataSource");
+		System.out.println(dataSource);
+	}
+
+}

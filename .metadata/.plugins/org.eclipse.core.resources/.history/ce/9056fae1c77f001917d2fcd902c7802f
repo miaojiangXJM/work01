@@ -1,0 +1,24 @@
+package com.quality.service;
+
+import com.quality.dao.ITUserDao;
+import com.quality.dao.TUserDao;
+import com.quality.po.TUser;
+
+public class TUserService implements ITUserService{
+
+	private ITUserDao tuserdao;
+	
+	public void settuserDao(TUserDao tuserdao) {
+		this.tuserdao=tuserdao;
+	}
+	
+	public ITUserDao gettuserDao(){
+		return tuserdao;
+		}
+	
+	@Override
+	public void addTUser(TUser tUser) {
+		tuserdao.addUser(tUser);
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.tgb.web.controller.dao;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.tgb.web.controller.entity.User;
+
+public interface IUserDao {
+	
+	public void addUser(HttpServletRequest request,User user);
+
+}

@@ -1,0 +1,21 @@
+1559058575860	Rename package 'com.quality'
+1559058599967	Copy compilation unit
+1559058605049	Delete element
+1559058650449	Copy package
+1559058707910	Copy package
+1559058731454	Copy package
+1559058782066	Copy package
+1559058816725	Copy package
+1559058824008	Delete element
+1559058830008	Delete element
+1559058858931	Rename type 'TUserDao'
+1559058873585	Rename type 'TUserController'
+1559058895748	Rename type 'ITUserService'
+1559058914275	Rename type 'TUserService'
+1559058971718	Rename resource 'spring-hibernate.xml'
+1559058992315	Rename resource 'hibernate.cfg.xml'
+1559059052882	Rename resource 'spring-servlet.xml'
+1559059112786	Rename resource 'spring-applicationContext.xml'
+1559059401912	Rename type 'ITUserDao'
+1559060022217	Rename type 'TUser'
+1559060205398	Rename type 'ITUserManager'

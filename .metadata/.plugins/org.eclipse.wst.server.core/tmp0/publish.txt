@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sun Sep 15 16:47:17 CST 2019
+org.eclipse.jst.jee.server\:/binary\:D\:\\workSpace\\work_01\\theTest2\\WebContent\\WEB-INF\\lib\\spring-web-4.2.3.RELEASE.jar=D\:\\IDE\\tomcat7.0\\webapps\\theTest2\\WEB-INF\\lib\\spring-web-4.2.3.RELEASE.jar
+org.eclipse.jst.jee.server\:theTest2=D\:\\IDE\\tomcat7.0\\webapps\\theTest2

@@ -1,0 +1,38 @@
+package com.tgb.web.controller.dao;
+
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import org.hibernate.SessionFactory;
+import com.tgb.web.controller.Util.Util;
+import com.tgb.web.controller.entity.User;
+
+
+
+public class UserDao implements IUserDao {
+
+	private SessionFactory sessionFactory;
+	
+	public SessionFactory setSessionFactory(SessionFactory sessionFactory) {
+		return this.sessionFactory = sessionFactory;
+	}
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	@Override
+	public void addUser(HttpServletRequest request,User user) {
+			String sql = "select * from t_user";
+			//Connection conn = Util.getUtil();
+			//conn.createStatement().execute(sql);
+			List list = Util.executeSqlQuery(sql);
+			System.out.println(list.size());
+			if(list.size()!=0 && list!=null) {
+				Object[] obj = (Object[])list.get(0);
+				String userid = (String)obj[0];
+				String userloginname = (String)obj[1];
+				String userloginpassword =  (String)obj[2];
+				System.out.println(userid+" "+userloginname+" "+userloginpassword);
+			}
+	}
+
+	
+}

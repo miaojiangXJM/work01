@@ -1,0 +1,55 @@
+package com.tgb.web.controller.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
+import org.hibernate.SessionFactory;
+
+import com.mysql.jdbc.Connection;
+import com.tgb.web.controller.Util.Util;
+import com.tgb.web.controller.entity.User;
+
+
+
+public class UserDao implements IUserDao {
+
+	private SessionFactory sessionFactory;
+	
+	public SessionFactory setSessionFactory(SessionFactory sessionFactory) {
+		return this.sessionFactory = sessionFactory;
+	}
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	@Override
+	public void addUser(HttpServletRequest request,User user) {
+			String userLoginName = request.getParameter("userLoginName");
+			String userLoginPsassword = request.getParameter("userLoginPsassword");
+			String id = UUID.randomUUID().toString().replace("-",""); //主键
+			String sql = "insert into t_user values ();";
+			Connection conn = Util.getUtil();
+			try {
+				conn.createStatement().execute(sql);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+	
+	@Override
+	public List getUser(HttpServletRequest request,User user) {
+			String sql = "select * from t_user";
+			List list = Util.executeSqlQuery(sql);
+			System.out.println(list.size());
+			if(list.size()!=0 && list!=null) {
+				Object[] obj = (Object[])list.get(0);
+				String userid = (String)obj[0];
+				String userloginname = (String)obj[1];
+				String userloginpassword =  (String)obj[2];
+			}
+			return list;
+	}
+
+	
+}
