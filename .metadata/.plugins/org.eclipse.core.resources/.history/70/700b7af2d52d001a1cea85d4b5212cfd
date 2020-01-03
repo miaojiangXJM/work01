@@ -1,0 +1,16 @@
+package leetCode;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+public class Controller026Array {
+/*三数之和，不可包含重复三元组*/
+	@Test
+	public void deleteSS() {
+		int[] nums = new int[]{-1, 0, 1, -2, -1, 2 , -3 , -3, 6};
+		
+	}
+}

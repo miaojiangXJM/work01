@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TUserController.names" project="theTest2" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.tgb.web.controller.TUserController" time="0.0" displayname="TUserController" uniqueid="[engine:junit-jupiter]/[class:com.tgb.web.controller.TUserController]">
+    <testcase name="names" classname="com.tgb.web.controller.TUserController" time="0.0" displayname="names()" uniqueid="[engine:junit-jupiter]/[class:com.tgb.web.controller.TUserController]/[method:names()]"/>
+  </testsuite>
+</testrun>

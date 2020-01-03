@@ -19,6 +19,8 @@
 <title>主页</title>
 </head>
 <script type="text/javascript">
+
+	//退出登录
 	function exit(){
 		$.ajax({  
 	        type: "POST",  
@@ -35,41 +37,38 @@
 	    });
 	}
 	
-	
-</script>
-<!-- <style>
-div:hover {
-			width:300px;
-		  }
-div {
-	width:100px;
-	height:100px;
-	background:blue;
-	transition:width 2s;
-	-moz-transition:width 2s; /* Firefox 4 */
-	-webkit-transition:width 2s; /* Safari and Chrome */
-	-o-transition:width 2s; /* Opera */
+	function ceshi(){
+		$.ajax({  
+            type: "POST",  
+            async: false,  
+            url: '/theTest2/tUser/ceshi', 
+            contentType:"application/json",
+            dataType : "json"
+		});
 	}
-</style> -->
+	function ceshi1(){
+		$.ajax({  
+            type: "POST",  
+            async: false,  
+            url: '/theTest2/tUser/ceshi1', 
+            contentType:"application/json",
+            dataType : "json"
+		});
+	}
+</script>
+
 <body style="margin:0;padding:0;">
 
 	<div style="height: 50px;width: 50px;background-color:#459df5;">
 	
 	</div>
-	<h1>欢迎登陆</h1>
-	
-	<div style="width:600px;height:200px;background:red;">
-		<h5 style="position: relative;top: 25%">专业项目：</h5><h5 style="position: relative;top: 25%;left: 150px;">xxxxxxx</h5>
-		<p style="position: relative;top: 28%">考核日期：</p>
-		<p style="position: relative;top: 31%">有效日期：</p>
-	</div>
-	
-	<a href="#" class="" style='text-decoration:none;font-size: 12px' onclick="exit()">退出登录</a>
-	<!-- <div style="top: 50px;position: absolute;">
+	<div style="top: 50px;position: absolute;">
 		<form>
 			<p>进来了</p>
 			<a href="#" class="" style='text-decoration:none;font-size: 12px' onclick="exit()">退出登录</a>
+			<a href="#" class="" style='text-decoration:none;font-size: 12px' onclick="ceshi()">ceshi</a>
+			<a href="#" class="" style='text-decoration:none;font-size: 12px' onclick="ceshi1()">ceshi1</a>
 		</form>
-	</div> -->
+	</div>
 </body>
 </html>

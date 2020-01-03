@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Controller015Array" project="theTest2" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="leetCode.Controller015Array" time="0.001" displayname="Controller015Array" uniqueid="[engine:junit-jupiter]/[class:leetCode.Controller015Array]">
+    <testcase name="SanShuZhiHe" classname="leetCode.Controller015Array" time="0.001" displayname="SanShuZhiHe()" uniqueid="[engine:junit-jupiter]/[class:leetCode.Controller015Array]/[method:SanShuZhiHe()]"/>
+  </testsuite>
+</testrun>

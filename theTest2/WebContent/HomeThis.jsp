@@ -16,6 +16,7 @@
 	
 	
 	$(function(){
+		//判断已经勾选7天内自动登录
 		if(cookieRememberLoginInfo == 1){
 			$.ajax({  
 	            type: "POST",  
@@ -35,6 +36,7 @@
 		}
 	})
 	
+	//跳转到登录页面
 	function logon(){
 		var url = '<%=basePath%>login.jsp';
 		window.location.href = url ;
@@ -45,11 +47,6 @@
 	<div>
 		<form>
 			<img alt="" src="<%=basePath%>img/b1_31p4.jpg" style="width: 100%">
-			<div>
-				<!-- <span>
-					<span id = "a" style="color: #ffffff; position: absolute;top: 10px;left: 40%">qwe</span>
-				</span> -->
-			</div>
 			<div>
 				<a href="#" class="easyui-linkbutton"  onclick="logon()" style="color: #ffffff; position: absolute;top: 10px;left: 40%"  onclick="logon()">登录</a>
 			</div>

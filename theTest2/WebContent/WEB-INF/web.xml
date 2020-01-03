@@ -3,7 +3,7 @@
   <display-name>theTest2</display-name>
   <welcome-file-list>
     <welcome-file>HomeThis.jsp</welcome-file>
-    <welcome-file>login.jsp</welcome-file>
+   <!--  <welcome-file>login.jsp</welcome-file> -->
   </welcome-file-list>
   
  <context-param>
@@ -11,12 +11,13 @@
  	<param-value>classpath*:/config/*.xml</param-value>
  </context-param>
      
+<listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+</listener> 
 <listener> 
 	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
 </listener> 
-<!-- <listener>
-    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-</listener> -->
+
   
   <!-- 配置SpringMVC-->
   <servlet>

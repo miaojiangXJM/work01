@@ -39,6 +39,7 @@ public class UserDao implements IUserDao {
 		
 	}
 	
+	//用户登录
 	@Override
 	public List loginUser(HttpServletRequest request, User user) {
 		String userLoginName = request.getParameter("userLoginName");//账号

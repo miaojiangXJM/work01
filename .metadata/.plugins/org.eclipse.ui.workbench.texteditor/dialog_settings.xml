@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="logon" key="selection"/>
+		<item value="ceshi1" key="selection"/>
 		<list key="findhistory">
+			<item value="ceshi1"/>
 			<item value="logon"/>
 			<item value="exit"/>
 		</list>

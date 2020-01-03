@@ -25,6 +25,7 @@
  	var cookieRememberLoginInfo = $.cookie('rememberLoginInfo');
 	
 	$(function(){
+		//判断已经勾选7天内自动登录
 		if(cookieRememberLoginInfo == 1){
 			$.ajax({  
 	            type: "POST",  
@@ -45,23 +46,27 @@
 	}) 
 
 
-
+	//键盘敲击事件
 	function errors(event){
-		//键盘敲击事件
+		//获取当前按键输入框的id
 		var thisId =$(":text:focus").attr("id");
 		if(thisId == 'userLoginName'){
 			document.getElementById("errors1").style.display="none";
 		}else if(thisId == 'userLoginPassword'){
 			document.getElementById("errors2").style.display="none";
 		}
-	}	
+	}
+	
 	//登录
 	function login(){
+		//一周内自动登录，0为否，1为是
 		var rememberLoginInfo = '0';
 		if ($("#rememberLoginInfo").get(0).checked) {
 			rememberLoginInfo = '1';
 		}
+		//用户登录账号
 		var userLoginName = $('#userLoginName').val();
+		//用户登录密码
 		var userLoginPassword = $('#userLoginPassword').val();
 		if(userLoginName == null || userLoginName == "" ){
 			document.getElementById("errors1").style.display="inline";
@@ -71,6 +76,7 @@
 			document.getElementById("errors2").style.display="inline";
 			return;
 		}
+		//登录
 		$.ajax({  
             type: "POST",  
             async: false,  
@@ -90,6 +96,7 @@
         }); 
 	}
 	
+	//跳转注册页面
 	function logon(){
 		var url = '<%=basePath%>registered.jsp';
 		window.location.href = url ;
@@ -121,6 +128,8 @@
 					<tr>
 						<td><a href="#" class="easyui-linkbutton" tabindex="3" onclick="login()">确认</a></td>
 					</tr>
+				</table>
+				<table>
 					<tr>
 						<td style="font-size: 12px">
 							<label style="vertical-align:middle;float:left;">
@@ -130,7 +139,7 @@
 					</tr>
 					
 					<tr>
-						<td><a href="#" class="" style='text-decoration:none;font-size: 12px' onclick="logon()">没有账号,立即注册</a></td>
+						<td><a href="#" class="" style="text-decoration:none;font-size: 12px" onclick="logon()">没有账号,立即注册</a></td>
 					</tr>
 				</table>
 			</div>
